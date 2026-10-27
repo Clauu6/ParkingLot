@@ -1,24 +1,18 @@
-<header data-bs-theme="dark">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}">Parking Lot</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf('/')) eq '/about.jsp' ? 'active' : ''}"
-                           aria-current="page" href="${pageContext.request.contextPath}/about.jsp">About</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/Login">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <ul class="nav nav-pills me-auto">
+        <li class="nav-item">
+          <a href="${pageContext.request.contextPath}/" class="nav-link ${activePage eq 'Home' ? 'active' : 'text-white'}">Parking Lot</a>
+        </li>
+        <li class="nav-item">
+          <a href="${pageContext.request.contextPath}/About" class="nav-link ${activePage eq 'About' ? 'active' : 'text-white'}">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="${pageContext.request.contextPath}/Cars" class="nav-link ${activePage eq 'Cars' ? 'active' : 'text-white'}">Cars</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
